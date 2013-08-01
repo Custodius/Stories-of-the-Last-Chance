@@ -1,0 +1,887 @@
+triggers {
+  name: "GOAL-Initial Motorcycle Quest"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "51f66969316637e41700419b"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Fix your ride, man. "
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51f6afba3166373020001566"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+regions {
+  name: "CameraRegion"
+  position {
+    x: -7
+    y: 12
+    width: -104
+    height: 44
+  }
+  enabledAtStart: true
+  is_camera_region: true
+  idRef {
+    id: "51f62366316637e417003a80"
+  }
+  directional_light_dir {
+    x: 0
+    y: -1
+    z: 0
+  }
+  directional_light_color {
+    r: 0.023529412
+    g: 0.0078431377
+    b: 0.32549021
+    a: 0.50196081
+  }
+  ambient_light_color {
+    r: 0.13333334
+    g: 0.18431373
+    b: 0.29803923
+    a: 0.50196081
+  }
+  ambience_template: "barrens-day"
+  combat_music: "Seattle-Set5-Combat"
+  default_music: "Seattle-Set3-Legwork"
+  loop_combat_music: true
+  loop_default_music: false
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -63
+    y: 0
+    z: 47
+  }
+  orientation: ORIENTATION_N
+  displayName: "Beggar"
+  idRef {
+    id: "51f62366316637e417003ac6"
+  }
+  character_instance {
+    prefab_name: "Homeless/DwarfMaleHomelessBald"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        awareness: 24
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+    }
+    team_id: "Civilians"
+    char_name: "Beggar"
+    pc_spawn_number: -1
+    karma: 6
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -69
+    y: 0
+    z: 42
+  }
+  orientation: ORIENTATION_S
+  displayName: "Civy2"
+  idRef {
+    id: "51f62367316637e417003b2b"
+  }
+  character_instance {
+    prefab_name: "Extras/HumanFemaleWorkingclass"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        awareness: 24
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+    }
+    team_id: "Civilians"
+    char_name: "Civy2"
+    pc_spawn_number: -1
+    karma: 6
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -68
+    y: 0
+    z: 42
+  }
+  orientation: ORIENTATION_N
+  displayName: "Civy1"
+  idRef {
+    id: "51f62367316637e417003b3e"
+  }
+  character_instance {
+    prefab_name: "Core/DwarfMale"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        awareness: 24
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+    }
+    equipment {
+      prefab_name: "Maintenance"
+    }
+    team_id: "Civilians"
+    char_name: "Civy1"
+    pc_spawn_number: -1
+    portrait_code_override: "s5h6b6"
+    karma: 6
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -80
+    y: 0
+    z: 51
+  }
+  orientation: ORIENTATION_S
+  displayName: "WeaponSeller"
+  idRef {
+    id: "51f62367316637e417003ba4"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    conversationPoint {
+      conversationID: "51ad7a28323461b40f0002c7"
+      turnToFace: false
+    }
+  }
+  character_instance {
+    prefab_name: "Homeless/HumanMaleHomelessJacket"
+    character_sheet_id: "BaseCivilian"
+    equipment_sheet_id: "Merchant_Weapons_Basic"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_paranormal: 0
+        etiquette_socialite: 0
+        etiquette_infected: 0
+        chi_casting: 0
+        drain_resistance: 0
+        drone_combat: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        throwing_blades: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeAggressive
+    }
+    team_id: "Civilians"
+    char_name: "Discount Dirk"
+    pc_spawn_number: -1
+    hiring_type: HiringType_None
+    portrait {
+      filename: "backer_humanmale_adamdoochin_elduce"
+    }
+    karma: 6
+    hiring_cost_override: 500
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -107
+    y: 0
+    z: 26
+  }
+  orientation: ORIENTATION_S
+  displayName: "FoodVendor"
+  idRef {
+    id: "51f62368316637e417003cc8"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 3
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    conversationPoint {
+      conversationID: "51ae5ecb313361500d001d30"
+      turnToFace: false
+    }
+  }
+  character_instance {
+    prefab_name: "Extras/HumanMaleWorkingclassShirt"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        awareness: 24
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      archetypeName: "Non-Combatant"
+    }
+    team_id: "Civilians"
+    char_name: "Fu Ling"
+    pc_spawn_number: -1
+    karma: 6
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -14
+    y: 0
+    z: 18
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "51f63550316637e417003f8c"
+  }
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 0
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -102
+    y: 0
+    z: 43
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "51f6510c316637e41700413c"
+  }
+  character_instance {
+    prefab_name: "Core/TrollMale"
+    character_sheet_id: "Lvl1_Merc_Troll_Brute"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeAggressive
+    }
+    equipment {
+      prefab_name: "AdeptCombatvest"
+    }
+    equipment {
+      prefab_name: "Mana Fist"
+    }
+    team_id: "Shadowrunners"
+    char_name: "Tom"
+    pc_spawn_number: -1
+    ai_ignores: true
+    hiring_type: HiringType_Hireable
+    portrait {
+      filename: "Backer_TrollMale_TomWithuhn"
+    }
+    description_bio: "My job is simple. Crush those I\'m paid to crush. No questions asked."
+    karma: 1
+    hiring_cost_override: 1200
+    hiring_tag: "Brute"
+    is_backer: true
+    is_prop_character: true
+    id: "Lvl1_Merc_Troll_Brute"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -72
+    y: 0
+    z: 41.5
+  }
+  orientation: ORIENTATION_E
+  idRef {
+    id: "51f65126316637e41700413d"
+  }
+  character_instance {
+    prefab_name: "Core/OrkMale"
+    character_sheet_id: "Lvl1_Merc_Ork_UrbanShaman"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeAggressive
+    }
+    equipment {
+      prefab_name: "ShamanUrban"
+    }
+    equipment {
+      prefab_name: "Pi 1 Ceska Black Scorpion (Smartlink)"
+    }
+    equipment {
+      prefab_name: "Bound Air Spirit 1"
+    }
+    equipment {
+      prefab_name: "Bound Earth Spirit 1"
+    }
+    equipment {
+      prefab_name: "HealthPack"
+    }
+    team_id: "Shadowrunners"
+    char_name: "Kiluminati Alabrad"
+    pc_spawn_number: -1
+    ai_ignores: true
+    hiring_type: HiringType_Hireable
+    cyberware_jack: "Datajack"
+    portrait {
+      filename: "Backer_OrkMale_BradleyMiller_KiluminatiAlabrad"
+    }
+    description_bio: "The Network wanted a shaman that comes from the streets with a full command of spirits."
+    karma: 1
+    hiring_cost_override: 1200
+    hiring_tag: "Urban Shaman"
+    is_backer: true
+    is_prop_character: true
+    id: "Lvl1_Merc_Ork_UrbanShaman"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -80
+    y: 0
+    z: 48
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "51f6513b316637e41700413e"
+  }
+  character_instance {
+    character_sheet_id: "Lvl2_Elf_Samurai"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeAggressive
+    }
+    equipment {
+      prefab_name: "Sword 1 Machete"
+    }
+    equipment {
+      prefab_name: "HealthPack"
+    }
+    equipment {
+      prefab_name: "Grenade 1 (Frag)"
+    }
+    equipment {
+      prefab_name: "Grenade 1 (Flash)"
+    }
+    equipment {
+      prefab_name: "Pi 1 Ceska Black Scorpion"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    pc_spawn_number: -1
+    hiring_type: HiringType_Hireable
+    karma: 2
+    hiring_cost_override: 1200
+    hiring_set_randomizer: "elf_samurai"
+    hiring_tag: "Samurai"
+    is_prop_character: true
+    id: "Lvl2_Elf_Samurai"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -110
+    y: 0
+    z: 19
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "51f6516e316637e41700413f"
+  }
+  character_instance {
+    prefab_name: "Core/HumanMale"
+    character_sheet_id: "Lvl2_Merc_Human_Techmaster"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeAggressive
+    }
+    equipment {
+      prefab_name: "RiggerTrenchcoat"
+    }
+    equipment {
+      prefab_name: "DroneRepairKit"
+    }
+    equipment {
+      prefab_name: "CyberdeckSony"
+    }
+    equipment {
+      prefab_name: "ESP Kamikaze"
+    }
+    equipment {
+      prefab_name: "PR Killer 1"
+    }
+    equipment {
+      prefab_name: "PR Erosion 1"
+    }
+    equipment {
+      prefab_name: "PR Shield 1"
+    }
+    equipment {
+      prefab_name: "DroneAttackB_Strato9"
+    }
+    equipment {
+      prefab_name: "Pi 2 Ares Predator (Smartlink)"
+    }
+    team_id: "Shadowrunners"
+    char_name: "Aruba"
+    pc_spawn_number: -1
+    hiring_type: HiringType_Hireable
+    cyberware_jack: "Datajack"
+    portrait {
+      filename: "Backer_HumanMale_JanRadersheidt"
+    }
+    description_bio: "The Network has trusted me as the avatar that will control the machines of this age."
+    karma: 2
+    hiring_cost_override: 1500
+    hiring_tag: "Techmaster"
+    is_backer: true
+    is_prop_character: true
+    id: "Lvl2_Merc_Human_Techmaster"
+  }
+}
+goals {
+  name: "Fix your ride, man. "
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
+  description: "Your chopper\'s been slaggged and you can\'t be seen walking the streets for long. You should work on getting this bike fixed. Probably gonna need some tools, some parts and a BIke Build and Repair knowsoft chip. "
+}
+worldMapLocation {
+  filename: ""
+  location {
+    x: 0
+    y: 0
+  }
+}
+mapName: "The Rez"
+parentStory: ""
+scene_title: "The \'Rez\'"
+scene_subtitle: "Denver\'s Marketplace of the Shadows"
+scene_synopsis: "A tongue-in-cheek name, the Rez is the heart and soul of the Aurora Warrens of Denver. Populated by anglos displaced by the birth of the NAN nations, the anti-indian sentiment runs deep in this part of town. \n\nWhile the Warrens is a hotbed of gang warfare, none of the gangs will fight in the marketplaces that dot the Rez, by mutual accord. For the most part, it\'s neutral territory. For the most part. \n\nAs a member of the Steel Tide, a mercenary motorcycle gang headquartered in the Warrens, you don\'t take sides in the rumbles unless you\'re paid to - and paid well. When the Tide rolls in, the shit hits the fan and people know it. "
+scene_image: ""
+scene_continue_button_skip: false
+scene_restore_runner_health: false
+directional_light_dir {
+  x: -0.5
+  y: -1
+  z: -0.75
+}
+directional_light_color {
+  r: 0.50196081
+  g: 0.50196081
+  b: 0.50196081
+}
+ambient_light_color {
+  r: 0.50196081
+  g: 0.50196081
+  b: 0.50196081
+}
+allow_drawn_weapons: false
+team_affiliations {
+  team_name: "Shadowrunners"
+  affiliation: 0
+  affiliation: 1
+  affiliation: 1
+  affiliation: 0
+}
+team_affiliations {
+  team_name: "Gangers"
+  affiliation: 1
+  affiliation: 0
+  affiliation: 1
+  affiliation: 0
+}
+team_affiliations {
+  team_name: "LoneStar"
+  affiliation: 1
+  affiliation: 1
+  affiliation: 0
+  affiliation: 0
+}
+team_affiliations {
+  team_name: "Civilians"
+  affiliation: 0
+  affiliation: 0
+  affiliation: 0
+  affiliation: 0
+}
+scene_dimensions {
+  dimension_name: "Default"
+}
+show_hiring_screen_on_scene_load: false
+scene_hiring_prerequisites {
+  prereq_description: ""
+  prereq_conditions {
+  }
+}
+hiring_slot_count: 0
+hiring_minimum_karma: 0
+hiring_maximum_karma: 0
+roster_overrides {
+}
+use_hiring_cost_warning: false
+hiring_average_cost: 0
+override_hiring_average_cost: false
+show_equip_screen_on_scene_load: false

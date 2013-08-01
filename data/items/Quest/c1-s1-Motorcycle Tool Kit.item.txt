@@ -1,0 +1,8 @@
+id: "c1-s1-Motorcycle Tool Kit"
+type: ItemType_QuestItem
+uirep {
+  name: "Motorcycle Tool Kit"
+  description: "A toolbox full of tools designed to work on small engines and the other systems found on a motorcycle. "
+}
+credentials: 0
+sorting_group: "Quest"

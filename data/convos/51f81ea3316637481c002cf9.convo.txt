@@ -1,0 +1,76 @@
+idRef {
+  id: "51f81ea3316637481c002cf9"
+}
+ui_name: "c1-s2-Scraggs"
+nodes {
+  idRef {
+    id: "51f91a0f316637741c002d24"
+  }
+  index: 0
+  text: "{{GM}}Scraggs is a fixture in these parts. If you need a part or a bit of scrap, Scraggs is your guy. {{/GM}}"
+  branches {
+    responseText: "Hey, you Scraggs? Great chummer. Look, I need a combustion chamber for my Harley Davidson Scorpion. My ride got scavanged last night by some slags."
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_GM_Voice
+}
+nodes {
+  idRef {
+    id: "51f91a0f316637741c002d27"
+  }
+  index: 1
+  text: "{{GM}}He looks around, tired, one hand wiping back through oily hair, scratching at the side of this scalp.{{/GM}}\n\nCan\'t help you son. I just can\'t. See, them drekken Blackboot Skins have taken over my yard. I got a Scorpion like yours, but unless you can get those gangers out of my wrecking yard, I can\'t give you the parts. \n\nBut you know, you look like a spry sort. All big and muscley. Make you a deal there, son. You take care of my ganger problem, and you can have those bike parts you want. "
+  branches {
+    responseText: "BlackBoot Skins? Who are they? "
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Sure, I\'ll kick their hoops chummer.. but don\'t forget, I do this and I get the parts for EllieMay. \n"
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_GM_Speaker_Voice
+  sourceInSceneRef {
+    id: "51f7ccba316637b40f004ae2"
+  }
+}
+nodes {
+  idRef {
+    id: "51f91a0f316637741c002d2a"
+  }
+  index: 2
+  text: "Racist Drekheads, man... they shave their heads and like to bash on metahumans. I\'m not saying I love metas or injuns, but these guys take it to an Almos 20000 level, you know? They roll into the sprawl in good trucks and nice armor, so you know they got backing. \n"
+  branches {
+    responseText: "Yeah. I got this. But remember, when I come back, I get my parts for EllieMay. "
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51f7ccba316637b40f004ae2"
+  }
+}
+nodes {
+  idRef {
+    id: "51f95870316637741c002d7f"
+  }
+  index: 3
+  text: "Nullsheen, chummer. I heard you were someone who could get things done, so go get it done, omae. "
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51f7ccba316637b40f004ae2"
+  }
+}
+nodes {
+  idRef {
+    id: "51f9579f316637741c002d79"
+  }
+  index: 4
+  text: "Nullsheen, chummer. I heard you were someone who could get things done, so go get it done, omae. "
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51f7ccba316637b40f004ae2"
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}
