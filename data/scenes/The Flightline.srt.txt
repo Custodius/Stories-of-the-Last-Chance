@@ -72,76 +72,6 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "The Container"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "51f70734316637ac71001564"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "You can hear the sounds of scratching and growling from the other side of this container..."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51f7e6dc316637481c002ce7"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
   name: "Bill the Goon"
   events {
     ops {
@@ -166,6 +96,28 @@ triggers {
           functionName: "Get Map Item (Actor Reference)"
           args {
             string_value: "51f7f8d3316637481c002ced"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb5013316637d018001996"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb4fe3316637d018001995"
           }
         }
       }
@@ -207,6 +159,9 @@ triggers {
           }
         }
       }
+    }
+    ops {
+      functionName: "No Effect"
     }
   }
   isActive: true
@@ -363,13 +318,73 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: "Central Fight"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51fb531f316637d018001998"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb539c316637d01800199b"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb5397316637d018001999"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb539a316637d01800199a"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fb54bb316637d01800199c"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
 regions {
   name: "Main Camera Region"
   position {
-    x: -48.6
-    y: -17
-    width: 102
-    height: 102
+    x: -47.6
+    y: -8
+    width: 101
+    height: 93
   }
   enabledAtStart: true
   is_camera_region: true
@@ -402,10 +417,10 @@ regions {
 regions {
   name: "Bill the goon combat"
   position {
-    x: 69
-    y: 7
+    x: -3
+    y: 65
     width: 2
-    height: 2
+    height: 20
   }
   enabledAtStart: true
   is_camera_region: false
@@ -438,10 +453,10 @@ regions {
 regions {
   name: "autor the knife combat"
   position {
-    x: 67
-    y: 7
-    width: 1
-    height: 12
+    x: 29
+    y: 14
+    width: 23
+    height: 7
   }
   enabledAtStart: true
   is_camera_region: false
@@ -510,10 +525,10 @@ regions {
 regions {
   name: "Romperstomper combat"
   position {
-    x: 63
-    y: 7
-    width: 1
-    height: 6
+    x: -26
+    y: 15
+    width: 3
+    height: 39
   }
   enabledAtStart: true
   is_camera_region: false
@@ -543,10 +558,46 @@ regions {
   loop_combat_music: true
   loop_default_music: false
 }
+regions {
+  name: "Central Fight"
+  position {
+    x: 4
+    y: 59
+    width: 5
+    height: 5
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "51fb531f316637d018001998"
+  }
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+}
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: 43
+    x: 40
     y: 0
     z: 84
   }
@@ -692,17 +743,18 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 72
+    x: 43
     y: 0
-    z: 20
+    z: 8
   }
   orientation: ORIENTATION_E
+  displayName: "Blackboot 8"
   idRef {
     id: "51f7cf68316637b40f004ae6"
   }
   character_instance {
     prefab_name: "Homeless/HumanMaleHomelessBeard"
-    character_sheet_id: "Lvl1_Troll_Samurai"
+    character_sheet_id: "Lvl1_Merc_Human_Assassin"
     character_mod {
       stats {
         body: 0
@@ -781,7 +833,7 @@ characters {
       prefab_name: "Pi 1 Ceska Black Scorpion"
     }
     team_id: "Gangers"
-    char_name: "Blackboot Thug"
+    char_name: "Autor the knife"
     enabled_at_start: false
     pc_spawn_number: -1
     hiring_type: HiringType_Hireable
@@ -832,12 +884,12 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 72
+    x: -15
     y: 0
-    z: 21
+    z: 74
   }
   orientation: ORIENTATION_S
-  displayName: "Bill the Goon"
+  displayName: "Blackboot1"
   idRef {
     id: "51f7f8d3316637481c002ced"
   }
@@ -931,11 +983,11 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 73
+    x: -40
     y: 0
-    z: 24
+    z: 30
   }
-  orientation: ORIENTATION_N
+  orientation: ORIENTATION_S
   idRef {
     id: "51f959ae316637741c002da8"
   }
@@ -1024,6 +1076,283 @@ characters {
     hiring_tag: "Weaponmaster"
     is_backer: true
     id: "Lvl1_Merc_Human_Weaponmaster"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -13
+    y: 0
+    z: 70
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 2"
+  idRef {
+    id: "51fb4fe3316637d018001995"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Generic_Lv1_Human_Melee"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Thug"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -15
+    y: 0
+    z: 76
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 3"
+  idRef {
+    id: "51fb5013316637d018001996"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Generic_Lv1_Human_Melee"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Beater"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: 9
+    y: 0
+    z: 54
+  }
+  orientation: ORIENTATION_E
+  displayName: "Blackboot 5"
+  idRef {
+    id: "51fb5397316637d018001999"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Lonestar_Lv1_Human_Pistol"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "LoneStar"
+    char_name: "Blackboot thug"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: 4
+    y: 0
+    z: 47
+  }
+  orientation: ORIENTATION_E
+  displayName: "Blackboot 6"
+  idRef {
+    id: "51fb539a316637d01800199a"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "CG Human None"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "LoneStar"
+    char_name: "Blackboot thug"
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: 2
+    y: 0
+    z: 52
+  }
+  orientation: ORIENTATION_E
+  displayName: "Blackboot 4"
+  idRef {
+    id: "51fb539c316637d01800199b"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Generic_Lv2_Human_Melee"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "LoneStar"
+    char_name: "Blackboot Beater"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: 37
+    y: 0
+    z: 4
+  }
+  orientation: ORIENTATION_E
+  displayName: "Blackboot 7"
+  idRef {
+    id: "51fb571a316637d0180019aa"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Generic_Lv1_Human_Melee"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Thug"
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: 39
+    y: 0
+    z: 6
+  }
+  orientation: ORIENTATION_E
+  displayName: "Blackboot 9"
+  idRef {
+    id: "51fb5720316637d0180019ab"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Generic_Lv2_Human_Melee"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Thug"
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
   }
 }
 worldMapLocation {
