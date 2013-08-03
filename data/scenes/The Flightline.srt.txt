@@ -1,5 +1,5 @@
 triggers {
-  name: "Charred Chains"
+  name: "Lore Object - Charred Chains"
   events {
     ops {
       functionName: "On Item Interaction"
@@ -59,9 +59,6 @@ triggers {
         float_value: 0
       }
     }
-    ops {
-      functionName: "No Effect"
-    }
   }
   isActive: true
   idRef {
@@ -72,146 +69,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Bill the Goon"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51f7f3a1316637481c002cea"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "51f7f8d3316637481c002ced"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "51fb5013316637d018001996"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "51fb4fe3316637d018001995"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51f7f596316637481c002ceb"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Autor the Knife"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51f7fa10316637481c002cee"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "51f7cf68316637b40f004ae6"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "No Effect"
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51f7faa5316637481c002cef"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Mr. Gruffles"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51f7fae9316637481c002cf0"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "51f7d789316637481c002cd7"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51f7faf8316637481c002cf1"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Charred Chains"
+  name: "Lore Object - Flight 502"
   events {
     ops {
       functionName: "On Item Interaction"
@@ -281,7 +139,541 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Romperstomper"
+  name: "Lore Object - Control Pillar"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "51fc6028316637083c004e2c"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Goal"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Thadeus the Pen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "You place your hand on the pillar of stone... and it feels warm to the touch. With a slight rumble, the container barring your path is moved aside."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Delete Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "51fc4887316637083c004d84"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc65aa316637083c004e33"
+  }
+  elseActions {
+    ops {
+      functionName: "No Effect"
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Lore Object - Door Container"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "51fc4887316637083c004d84"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Goal"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Thadeus the Pen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "This container seems to swing out of the way, but you can\'t really figure out how... there is no mechanism!"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc48f2316637083c004d88"
+  }
+  elseActions {
+    ops {
+      functionName: "No Effect"
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Combat - Autor the Knife"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51f7fa10316637481c002cee"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51f7cf68316637b40f004ae6"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb571a316637d0180019aa"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51f7cf68316637b40f004ae6"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "This is Blackboot territory, Meta-lover! "
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb5720316637d0180019ab"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51f7faa5316637481c002cef"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Combat - Bill the Goon"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51f7f3a1316637481c002cea"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51f7f8d3316637481c002ced"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb5013316637d018001996"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fb4fe3316637d018001995"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51f7f8d3316637481c002ced"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Lookit this, mates! A slotten meta-lover! Get em!"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Play Sound"
+      args {
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "weapons"
+          }
+          args {
+            string_value: "ShotgunRack"
+          }
+        }
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51f7f596316637481c002ceb"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Combat - Mr. Gruffles"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51f7fae9316637481c002cf0"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51f7d789316637481c002cd7"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fbf333316637083c004d08"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fbf3d8316637083c004d09"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fbf3f1316637083c004d0a"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51f7faf8316637481c002cf1"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Combat - Romperstomper"
   events {
     ops {
       functionName: "On Region Enter"
@@ -319,7 +711,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Central Fight"
+  name: "Combat - Central Fight"
   events {
     ops {
       functionName: "On Region Enter"
@@ -369,6 +761,98 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51fb539c316637d01800199b"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "This is Blackboot territory, Meta-lover! "
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51fb539a316637d01800199a"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Time to get fragged!"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
   }
   isActive: true
   idRef {
@@ -378,8 +862,546 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: "Combat - Thadius"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51fc2420316637083c004d4f"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Goal"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Thadeus the Pen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fc2472316637083c004d50"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fc24c3316637083c004d51"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "51fc5ea3316637083c004e28"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc30e3316637083c004d65"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Goal Update - Autor the Knife"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Target Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51f7cf68316637b40f004ae6"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Autor the Knife"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add Actor Karma"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc3f58316637083c004d81"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Goal Update - RomperStomper"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Target Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51f959ae316637741c002da8"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill RomperStomper"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add Actor Karma"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc41d4316637083c004d82"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Goal Update - Bill the Goon"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Target Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51f7f8d3316637481c002ced"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Bill the Goon"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add Actor Karma"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc422f316637083c004d83"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Goal Update - Thadeus the Pen"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Target Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51fc2472316637083c004d50"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Thadeus the Pen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add Actor Karma"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc4a0a316637083c004d8a"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Goal Update - Mr. Gruffles"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Target Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51f7d789316637481c002cd7"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Mr. Gruffles"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add Actor Karma"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fc4a28316637083c004d8b"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
 regions {
-  name: "Main Camera Region"
+  name: "Camera - Main"
   position {
     x: -47.6
     y: -8
@@ -408,14 +1430,14 @@ regions {
     b: 0.63137257
     a: 1
   }
-  ambience_template: ""
+  ambience_template: "underground-quiet"
   combat_music: ""
   default_music: ""
   loop_combat_music: true
   loop_default_music: false
 }
 regions {
-  name: "Bill the goon combat"
+  name: "Combat Trigger - Bill the Goon"
   position {
     x: -3
     y: 65
@@ -451,12 +1473,12 @@ regions {
   loop_default_music: false
 }
 regions {
-  name: "autor the knife combat"
+  name: "Combat Tigger - Autor the Knife"
   position {
-    x: 29
+    x: 28
     y: 14
-    width: 23
-    height: 7
+    width: 26
+    height: 8
   }
   enabledAtStart: true
   is_camera_region: false
@@ -487,12 +1509,12 @@ regions {
   loop_default_music: false
 }
 regions {
-  name: "Mr. Gruffles Combat."
+  name: "Combat Trigger - Mr. Gruffles"
   position {
-    x: 65
-    y: 7
-    width: 1
-    height: 6
+    x: -22
+    y: -8
+    width: 2
+    height: 19
   }
   enabledAtStart: true
   is_camera_region: false
@@ -523,7 +1545,7 @@ regions {
   loop_default_music: false
 }
 regions {
-  name: "Romperstomper combat"
+  name: "Combat Trigger - Romperstomper"
   position {
     x: -26
     y: 15
@@ -559,7 +1581,7 @@ regions {
   loop_default_music: false
 }
 regions {
-  name: "Central Fight"
+  name: "Combat Trigger - Central Fight"
   position {
     x: 4
     y: 59
@@ -570,6 +1592,42 @@ regions {
   is_camera_region: false
   idRef {
     id: "51fb531f316637d018001998"
+  }
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+}
+regions {
+  name: "Combat Trigger - Thaddius"
+  position {
+    x: -17
+    y: 52
+    width: 9
+    height: 12
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "51fc2420316637083c004d4f"
   }
   directional_light_dir {
     x: -0.5
@@ -620,6 +1678,7 @@ characters {
     z: 78
   }
   orientation: ORIENTATION_E
+  displayName: "Civilain 3"
   idRef {
     id: "51f7ccba316637b40f004ae2"
   }
@@ -633,7 +1692,7 @@ characters {
   }
   character_instance {
     prefab_name: "Homeless/HumanMaleHomelessJacket"
-    character_sheet_id: "Lvl5_Merc_Human_Assassin"
+    character_sheet_id: "BaseCivilian"
     character_mod {
       stats {
         body: 0
@@ -687,7 +1746,7 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Protect"
+      archetypeName: "Non-Combatant"
       attitude: AttitudeAggressive
     }
     equipment {
@@ -753,7 +1812,7 @@ characters {
     id: "51f7cf68316637b40f004ae6"
   }
   character_instance {
-    prefab_name: "Homeless/HumanMaleHomelessBeard"
+    prefab_name: "Core/HumanMale"
     character_sheet_id: "Lvl1_Merc_Human_Assassin"
     character_mod {
       stats {
@@ -808,7 +1867,7 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Protect"
+      archetypeName: "Guard - Hunt And Destroy"
       attitude: AttitudeAggressive
     }
     equipment {
@@ -833,13 +1892,13 @@ characters {
       prefab_name: "Pi 1 Ceska Black Scorpion"
     }
     team_id: "Gangers"
-    char_name: "Autor the knife"
+    char_name: "Autor the Knife"
     enabled_at_start: false
     pc_spawn_number: -1
     hiring_type: HiringType_Hireable
     karma: 2
     hiring_cost_override: 1200
-    hiring_set_randomizer: "human_adept"
+    hiring_set_randomizer: "human_samurai"
     hiring_tag: "Adept"
     id: "Lvl2_Human_Adept"
   }
@@ -847,11 +1906,12 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 74
+    x: -43
     y: 0
-    z: 22
+    z: -3
   }
-  orientation: ORIENTATION_N
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 11"
   idRef {
     id: "51f7d789316637481c002cd7"
   }
@@ -988,6 +2048,7 @@ characters {
     z: 30
   }
   orientation: ORIENTATION_S
+  displayName: "Blackboot 10"
   idRef {
     id: "51f959ae316637741c002da8"
   }
@@ -1161,11 +2222,11 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 9
+    x: 11
     y: 0
-    z: 54
+    z: 61
   }
-  orientation: ORIENTATION_E
+  orientation: ORIENTATION_N
   displayName: "Blackboot 5"
   idRef {
     id: "51fb5397316637d018001999"
@@ -1231,6 +2292,7 @@ characters {
     }
     team_id: "LoneStar"
     char_name: "Blackboot thug"
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -1240,9 +2302,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 2
+    x: 5
     y: 0
-    z: 52
+    z: 55
   }
   orientation: ORIENTATION_E
   displayName: "Blackboot 4"
@@ -1251,7 +2313,7 @@ characters {
   }
   character_instance {
     prefab_name: "Standard/HumanMaleStreetSamurai"
-    character_sheet_id: "Generic_Lv2_Human_Melee"
+    character_sheet_id: "CG Human Street Samurai"
     equipment_sheet_id: "Generic_Melee_Low"
     character_mod {
       stats {
@@ -1268,6 +2330,9 @@ characters {
       specializations {
       }
     }
+    equipment {
+      prefab_name: "Pi 1 Fichetti Security 500"
+    }
     team_id: "LoneStar"
     char_name: "Blackboot Beater"
     enabled_at_start: false
@@ -1275,14 +2340,15 @@ characters {
     portrait {
       filename: ""
     }
+    karma: 34
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 37
+    x: 41
     y: 0
-    z: 4
+    z: 6
   }
   orientation: ORIENTATION_E
   displayName: "Blackboot 7"
@@ -1310,6 +2376,7 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Blackboot Thug"
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -1349,11 +2416,550 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Blackboot Thug"
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
     }
   }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -39
+    y: 0
+    z: -2
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 12"
+  idRef {
+    id: "51fbf333316637083c004d08"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Lonestar_Lv1_Human_Pistol"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Thug"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -41
+    y: 0
+    z: -1
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 13"
+  idRef {
+    id: "51fbf3d8316637083c004d09"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Lonestar_Lv1_Human_Pistol"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Gunner"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -43
+    y: 0
+    z: -1
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 14"
+  idRef {
+    id: "51fbf3f1316637083c004d0a"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Lonestar_Lv2_Human_Pistol"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Thug"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: 45
+    y: 0
+    z: 75
+  }
+  orientation: ORIENTATION_N
+  displayName: "Civilian 1"
+  idRef {
+    id: "51fc2078316637083c004d47"
+  }
+  character_instance {
+    character_sheet_id: "Lvl6_Ork_Rigger"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Protect"
+      attitude: AttitudeAggressive
+    }
+    equipment {
+      prefab_name: "DroneSupportA_Sundowner"
+    }
+    equipment {
+      prefab_name: "Sh 3 Enfield AS-7"
+    }
+    equipment {
+      prefab_name: "DroneAttackA_SteelLynx"
+    }
+    equipment {
+      prefab_name: "Grenade 3 (Frag)"
+    }
+    equipment {
+      prefab_name: "HealthPack_hi"
+    }
+    equipment {
+      prefab_name: "DroneRepairKit_hi"
+    }
+    equipment {
+      prefab_name: "DroneRepairKit_hi"
+    }
+    team_id: "Civilians"
+    char_name: "Blindside"
+    pc_spawn_number: -1
+    hiring_type: HiringType_Hireable
+    cyberware_jack: "Datajack"
+    karma: 6
+    hiring_cost_override: 3200
+    hiring_set_randomizer: "dwarf_rigger"
+    hiring_tag: "Rigger"
+    is_prop_character: true
+    id: "Lvl6_Ork_Rigger"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -42
+    y: 0
+    z: 75
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 15"
+  idRef {
+    id: "51fc2472316637083c004d50"
+  }
+  character_instance {
+    prefab_name: "Lonestar/HumanMaleLonestarMage"
+    character_sheet_id: "Lonestar_Lv3_Human_Mage"
+    equipment_sheet_id: "Lonestar_Mage_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Guard - Seek And Destroy"
+    }
+    team_id: "Gangers"
+    char_name: "Thadeus the Pen"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+    karma: 61
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -41
+    y: 0
+    z: 65
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 16"
+  idRef {
+    id: "51fc24c3316637083c004d51"
+  }
+  character_instance {
+    prefab_name: "Standard/HumanMaleStreetSamurai"
+    character_sheet_id: "Generic_Lv3_Human_Melee"
+    equipment_sheet_id: "Generic_Melee_Low"
+    character_mod {
+      stats {
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+    }
+    team_id: "Gangers"
+    char_name: "Blackboot Beater"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: ""
+    }
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: 1
+    y: 0
+    z: -7
+  }
+  orientation: ORIENTATION_E
+  displayName: "Civilian 2"
+  idRef {
+    id: "51fc4af4316637083c004d8e"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    conversationPoint {
+      conversationID: "51fc5074316637083c004dac"
+      turnToFace: true
+    }
+  }
+  character_instance {
+    prefab_name: "Spirit/SpiritEarth"
+    character_sheet_id: "Lvl1_Merc_Ork_UrbanShaman"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Protect"
+      attitude: AttitudeAggressive
+    }
+    equipment {
+      prefab_name: "RiggerHawaiianShirt"
+    }
+    equipment {
+      prefab_name: "Spell Powerbolt 1"
+    }
+    equipment {
+      prefab_name: "Spell Flamethrower 1"
+    }
+    equipment {
+      prefab_name: "DroneAttackC_Doberman"
+    }
+    equipment {
+      prefab_name: "DroneRepairKit"
+    }
+    equipment {
+      prefab_name: "Grenade 1 (Flash)"
+    }
+    team_id: "Civilians"
+    char_name: "Treadstone"
+    pc_spawn_number: -1
+    hiring_type: HiringType_Hireable
+    cyberware_jack: "Datajack"
+    portrait {
+      filename: "generic_spirit_earth"
+    }
+    description_bio: "I am the sixth world dream. I combine both magic and machine!"
+    karma: 1
+    hiring_cost_override: 1200
+    hiring_tag: "Tech Mage"
+    is_backer: true
+    is_prop_character: true
+    id: "Lvl1_Merc_Troll_TechMage"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -40
+    y: 0
+    z: 74
+  }
+  orientation: ORIENTATION_S
+  displayName: "Blackboot 18"
+  idRef {
+    id: "51fc5ea3316637083c004e28"
+  }
+  character_instance {
+    prefab_name: "Spirit/SpiritEarth"
+    character_sheet_id: "Bug Soldier"
+    equipment_sheet_id: "Spirit Earth F1 Gear"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: -1
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Seek And Destroy"
+      attitude: AttitudeAggressive
+    }
+    team_id: "Gangers"
+    char_name: "Enslaved Earth Elemental"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    portrait {
+      filename: "Generic_Spirit_Earth"
+    }
+    karma: 144
+  }
+}
+goals {
+  name: "Kill Autor the Knife"
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
+  description: "Find and kill Autor the Knife and his squad of Blackboot Thugs"
+}
+goals {
+  name: "Kill Mr. Gruffles"
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
+  description: "Find and kill Mr. Gruffles and his squad of Blackboot Thugs."
+}
+goals {
+  name: "Kill Bill the Goon"
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
+  description: "Find and kill Bill the Goon and his squad of Blackboot Thugs"
+}
+goals {
+  name: "Kill RomperStomper"
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
+  description: "Find and kill Romperstomper and his squad of Blackboot Thugs"
+}
+goals {
+  name: "Fixing up EllieMay"
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
+  description: "Locate the parts to EllieMay and his squad of Blackboot Thugs"
+}
+goals {
+  name: "Kill Thadeus the Pen"
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
+  description: "Find and kill Thadeus the Pen and his gang. "
 }
 worldMapLocation {
   filename: ""
@@ -1366,8 +2972,8 @@ mapName: "The Siege Yard"
 parentStory: ""
 scene_title: "The Flightline"
 scene_subtitle: ""
-scene_synopsis: ""
-scene_image: ""
+scene_synopsis: "The Flightline was once a prosperous housing development back in the teens, south and east of the Quincy Reservoir. But then Michael Blackbird, a Sioux Shaman, took down Oceania Flight 502 as an act of terrorism in 2017.  On approach vector for Denver International Airport to the north, the aircraft came down mostly intact.\n\nHowever, dumping it\'s fuel and then slamming into the housing created a fireball that killed hundreds and scorched several city blocks area. With larger concerns to deal with, the United States didn\'t rebuild the area immediately. \n\nThe establishment of the Denver FRFZ and the balkinization of the city into the various sectors saw the area become a dumping ground for chems, metals and other waste from the city. A communal junk pile, run by old man Scraggs, it\'s well known among the shadows for it\'s blackmarket trade. "
+scene_image: "loadingimage_default"
 scene_continue_button_skip: false
 scene_restore_runner_health: false
 directional_light_dir {
@@ -1416,8 +3022,6 @@ team_affiliations {
 }
 scene_dimensions {
   dimension_name: "Default"
-}
-character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {

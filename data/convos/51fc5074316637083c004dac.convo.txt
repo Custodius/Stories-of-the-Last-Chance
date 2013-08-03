@@ -1,0 +1,197 @@
+idRef {
+  id: "51fc5074316637083c004dac"
+}
+ui_name: "C1-s2-Treadstone"
+nodes {
+  idRef {
+    id: "51fc5239316637083c004dc8"
+  }
+  index: 0
+  text: "{{GM}}The sound of stone moving on stone, deep and rumbling, fills the area. You look around - and there in the shadows, under the overhang of crushed cars, there stands Treadstone. Impossibly ancient and weatherbeaten, his form is hewn from solid, seamless basalt. When Treadstone speaks, it is as if the ground vibrates in time with his words..{{/GM}}\n\nFast life. Approach. Yes. "
+  branches {
+    responseText: "What? Me? What the frag are you supposed to be? "
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Holy Drek - a free spirit!"
+    conditions {
+      ops {
+        functionName: "Compare Actor Skill"
+        args {
+          call_value {
+            functionName: "Triggering Actor"
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "BaseOrCurrent"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "ActorSkills"
+            }
+            args {
+              int_value: 7
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          int_value: 3
+        }
+      }
+    }
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_GM_Speaker_Voice
+  sourceInSceneRef {
+    id: "51fc4af4316637083c004d8e"
+  }
+}
+nodes {
+  idRef {
+    id: "51fc56a4316637083c004dcc"
+  }
+  index: 1
+  text: "I am stone. I sing the granite bones of the earth. I have touched her molten core, and felt her frozen peaks. I am older than your meat. You may call me \'Treadstone\'. "
+  branches {
+    responseText: "Sure. Okay. Uh. What do you want, Treadstone?\n"
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fc4af4316637083c004d8e"
+  }
+}
+nodes {
+  idRef {
+    id: "51fc572f316637083c004dcf"
+  }
+  index: 2
+  text: "Freedom. There is a place not far from here... where a namegiver binds my people to his will and causes us pain. Find this namegiver and silence his song, and Treadstone will provide stones of value to namegivers. "
+  branches {
+    responseText: "Name... giver? Okay. So let me see if I understand. You... want me to rescue your friends... from - Oh. I get it. A mage. Right? He\'s summoning your friends and you don\'t like it. So you\'re going to pay me in... gemstones? "
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51fc58dc316637083c004dd2"
+  }
+  index: 3
+  text: "The namegiver is... correct. "
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Thadeus the Pen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "51fc5918316637083c004dec"
+  }
+  index: 4
+  text: "The namegiver is astute. "
+  branches {
+    responseText: "Alright. Namegiver... that must be your name for metahumans. Okay. What can I do for you, free spirit?"
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fc4af4316637083c004d8e"
+  }
+}
+nodes {
+  idRef {
+    id: "51fc59c0316637083c004def"
+  }
+  index: 5
+  text: "I am called Treadstone in your fast-tongue. There is a place not far from here... where a namegiver binds my people to his will and causes us pain. Find this namegiver and silence his song, and Treadstone will provide stones of value to namegivers. "
+  branches {
+    responseText: "I get it. A mage. Right? He\'s summoning your friends and you don\'t like it. So you\'re going to pay me in... gemstones? "
+    nextNodeIndex: 6
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fc4af4316637083c004d8e"
+  }
+}
+nodes {
+  idRef {
+    id: "51fc5a80316637083c004df2"
+  }
+  index: 6
+  text: "The namegiver is... correct. "
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fc4af4316637083c004d8e"
+  }
+  actions {
+    ops {
+      functionName: "Set Goal Status"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Thadeus the Pen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}
