@@ -7,7 +7,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (InteractableObject)"
           args {
-            string_value: "51f66969316637e41700419b"
+            string_value: "51fcee4d316637d09d004e55"
           }
         }
       }
@@ -38,6 +38,52 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "You look over your chopper, your beloved EllyMae, and you realize immediately she\'s been violated! Someone has ripped out her engine. You can fix her, but you\'re going to need the parts, tools and knowsofts to do it. Of course, then there\'s the revenge aspect. Nothing primes a carburetor like a slitch screaming in pain. "
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
   }
   isActive: true
   idRef {
@@ -47,48 +93,157 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: "Exposition - Initial"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51fcf5e8316637d09d004e8a"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "No Condition"
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "\"Someone is about to have a terminal case of my-foot-in-their-hoop. I should ask around the Rez to see if anyone saw some chucklefrags trying to sell the parts...\" "
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fcf623316637d09d004e8b"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
 regions {
-  name: "CameraRegion"
+  name: "Main Camera Region"
   position {
-    x: -7
-    y: 12
-    width: -104
-    height: 44
+    x: -117
+    y: -3
+    width: 116
+    height: 149
   }
   enabledAtStart: true
   is_camera_region: true
   idRef {
-    id: "51f62366316637e417003a80"
+    id: "51fd02e9316637d09d005762"
   }
   directional_light_dir {
-    x: 0
+    x: -0.5
     y: -1
-    z: 0
+    z: -0.75
   }
   directional_light_color {
-    r: 0.023529412
-    g: 0.0078431377
-    b: 0.32549021
-    a: 0.50196081
+    r: 0.27058825
+    g: 0.27058825
+    b: 0.43529412
+    a: 1
   }
   ambient_light_color {
-    r: 0.13333334
-    g: 0.18431373
-    b: 0.29803923
-    a: 0.50196081
+    r: 0.078431375
+    g: 0.14509805
+    b: 0.58431375
+    a: 1
   }
-  ambience_template: "barrens-day"
-  combat_music: "Seattle-Set5-Combat"
-  default_music: "Seattle-Set3-Legwork"
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+}
+regions {
+  name: "The marketplace"
+  position {
+    x: -73
+    y: 55
+    width: 35
+    height: 44
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "51fd13cc316637d09d0057be"
+  }
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: "downtown-day"
+  combat_music: ""
+  default_music: ""
   loop_combat_music: true
   loop_default_music: false
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -63
+    x: -48
     y: 0
-    z: 47
+    z: 73
   }
   orientation: ORIENTATION_N
   displayName: "Beggar"
@@ -124,14 +279,15 @@ characters {
     char_name: "Beggar"
     pc_spawn_number: -1
     karma: 6
+    is_prop_character: true
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -69
+    x: -61
     y: 0
-    z: 42
+    z: 76
   }
   orientation: ORIENTATION_S
   displayName: "Civy2"
@@ -172,9 +328,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -68
+    x: -58
     y: 0
-    z: 42
+    z: 76
   }
   orientation: ORIENTATION_N
   displayName: "Civy1"
@@ -214,27 +370,20 @@ characters {
     pc_spawn_number: -1
     portrait_code_override: "s5h6b6"
     karma: 6
+    is_prop_character: true
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -80
+    x: -71
     y: 0
-    z: 51
+    z: 77
   }
   orientation: ORIENTATION_S
   displayName: "WeaponSeller"
   idRef {
     id: "51f62367316637e417003ba4"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    conversationPoint {
-      conversationID: "51ad7a28323461b40f0002c7"
-      turnToFace: false
-    }
   }
   character_instance {
     prefab_name: "Homeless/HumanMaleHomelessJacket"
@@ -324,30 +473,6 @@ characters {
   idRef {
     id: "51f62368316637e417003cc8"
   }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 3
-    prerequisites {
-      ops {
-        functionName: "Evaluate Turn Mode"
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "TurnBasedOrFreeMove"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-    }
-    conversationPoint {
-      conversationID: "51ae5ecb313361500d001d30"
-      turnToFace: false
-    }
-  }
   character_instance {
     prefab_name: "Extras/HumanMaleWorkingclassShirt"
     character_sheet_id: "BaseCivilian"
@@ -382,7 +507,7 @@ characters {
     y: 0
     z: 18
   }
-  orientation: ORIENTATION_S
+  orientation: ORIENTATION_E
   idRef {
     id: "51f63550316637e417003f8c"
   }
@@ -473,7 +598,7 @@ characters {
       prefab_name: "Mana Fist"
     }
     team_id: "Shadowrunners"
-    char_name: "Tom"
+    char_name: "Croc"
     pc_spawn_number: -1
     ai_ignores: true
     hiring_type: HiringType_Hireable
@@ -492,9 +617,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -72
+    x: -69
     y: 0
-    z: 41.5
+    z: 59.5
   }
   orientation: ORIENTATION_E
   idRef {
@@ -575,7 +700,7 @@ characters {
       prefab_name: "HealthPack"
     }
     team_id: "Shadowrunners"
-    char_name: "Kiluminati Alabrad"
+    char_name: "Grachen"
     pc_spawn_number: -1
     ai_ignores: true
     hiring_type: HiringType_Hireable
@@ -595,9 +720,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -80
+    x: -68
     y: 0
-    z: 48
+    z: 69
   }
   orientation: ORIENTATION_S
   idRef {
@@ -691,9 +816,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -110
+    x: -104
     y: 0
-    z: 19
+    z: 20
   }
   orientation: ORIENTATION_S
   idRef {
@@ -802,11 +927,168 @@ characters {
     id: "Lvl2_Merc_Human_Techmaster"
   }
 }
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -42.9
+    y: 0
+    z: 17.1
+  }
+  orientation: ORIENTATION_E
+  idRef {
+    id: "51fcf720316637d09d004e8c"
+  }
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 0
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -48
+    y: 0
+    z: 63
+  }
+  orientation: ORIENTATION_E
+  displayName: "Beggar"
+  idRef {
+    id: "51fd0df7316637d09d00578b"
+  }
+  character_instance {
+    prefab_name: "Homeless/DwarfMaleHomelessBald"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        awareness: 24
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+    }
+    team_id: "Civilians"
+    char_name: "Beggar"
+    pc_spawn_number: -1
+    karma: 6
+    is_prop_character: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -53.3
+    y: 0
+    z: 82.8
+  }
+  orientation: ORIENTATION_E
+  idRef {
+    id: "51fd194e316637d09d0057c0"
+  }
+  character_instance {
+    prefab_name: "Scientist/HumanFemaleScientist"
+    character_sheet_id: "BaseCivilian"
+    equipment_sheet_id: "Merchant_Doctor_High"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_paranormal: 0
+        etiquette_socialite: 0
+        etiquette_infected: 0
+        chi_casting: 0
+        drain_resistance: 0
+        drone_combat: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        throwing_blades: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Protect"
+      attitude: AttitudeAggressive
+    }
+    team_id: "Civilians"
+    char_name: "Dr. Sara Castle"
+    pc_spawn_number: -1
+    hiring_type: HiringType_None
+    portrait {
+      filename: "Backer_HumanFemale_SaraCastle_DrSaraCastle_Tribute"
+    }
+    karma: 25
+    hiring_cost_override: 500
+  }
+}
 goals {
   name: "Fix your ride, man. "
   type: GoalType_Primary
   status: GoalStatus_Hidden
   description: "Your chopper\'s been slaggged and you can\'t be seen walking the streets for long. You should work on getting this bike fixed. Probably gonna need some tools, some parts and a BIke Build and Repair knowsoft chip. "
+}
+goals {
+  name: "New Scene Goal"
+  type: GoalType_Primary
+  status: GoalStatus_Hidden
 }
 worldMapLocation {
   filename: ""
@@ -869,6 +1151,8 @@ team_affiliations {
 }
 scene_dimensions {
   dimension_name: "Default"
+}
+character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
