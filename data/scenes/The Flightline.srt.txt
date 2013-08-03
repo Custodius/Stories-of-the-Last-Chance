@@ -377,6 +377,39 @@ triggers {
     }
   }
   conditions {
+    ops {
+      functionName: "Evaluate Goal"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Autor the Knife"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   actions {
     ops {
@@ -483,6 +516,39 @@ triggers {
     }
   }
   conditions {
+    ops {
+      functionName: "Evaluate Goal"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Bill the Goon"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   actions {
     ops {
@@ -617,6 +683,39 @@ triggers {
     }
   }
   conditions {
+    ops {
+      functionName: "Evaluate Goal"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill Mr. Gruffles"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   actions {
     ops {
@@ -688,6 +787,42 @@ triggers {
     }
   }
   conditions {
+    ops {
+      functionName: "No Condition"
+    }
+    ops {
+      functionName: "Evaluate Goal"
+      args {
+        call_value {
+          functionName: "Get Map Item (Goal)"
+          args {
+            string_value: "Kill RomperStomper"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "GoalStatus"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   actions {
     ops {
@@ -1475,10 +1610,10 @@ regions {
 regions {
   name: "Combat Tigger - Autor the Knife"
   position {
-    x: 28
-    y: 14
-    width: 26
-    height: 8
+    x: 29
+    y: 33
+    width: 19
+    height: 3
   }
   enabledAtStart: true
   is_camera_region: false
@@ -1619,10 +1754,10 @@ regions {
 regions {
   name: "Combat Trigger - Thaddius"
   position {
-    x: -17
-    y: 52
-    width: 9
-    height: 12
+    x: -15
+    y: 58
+    width: 4
+    height: 5
   }
   enabledAtStart: true
   is_camera_region: false
@@ -2235,6 +2370,7 @@ characters {
     prefab_name: "Standard/HumanMaleStreetSamurai"
     character_sheet_id: "Lonestar_Lv1_Human_Pistol"
     equipment_sheet_id: "Generic_Melee_Low"
+    equipment_sheet_id: "Lonestar_Pistol_Low"
     character_mod {
       stats {
         morale: 0
@@ -2250,13 +2386,17 @@ characters {
       specializations {
       }
     }
-    team_id: "LoneStar"
+    equipment {
+      prefab_name: "Pi 2 Browning Max-Power"
+    }
+    team_id: "Gangers"
     char_name: "Blackboot thug"
     enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
     }
+    karma: 30
   }
 }
 characters {
@@ -2290,7 +2430,7 @@ characters {
       specializations {
       }
     }
-    team_id: "LoneStar"
+    team_id: "Gangers"
     char_name: "Blackboot thug"
     enabled_at_start: false
     pc_spawn_number: -1
@@ -2333,7 +2473,7 @@ characters {
     equipment {
       prefab_name: "Pi 1 Fichetti Security 500"
     }
-    team_id: "LoneStar"
+    team_id: "Gangers"
     char_name: "Blackboot Beater"
     enabled_at_start: false
     pc_spawn_number: -1
@@ -3022,6 +3162,8 @@ team_affiliations {
 }
 scene_dimensions {
   dimension_name: "Default"
+}
+character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {

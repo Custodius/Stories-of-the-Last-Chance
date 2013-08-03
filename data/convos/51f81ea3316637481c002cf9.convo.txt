@@ -147,6 +147,17 @@ nodes {
         }
       }
     }
+    ops {
+      functionName: "Delete Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "51fd3e0c3166377491004df6"
+          }
+        }
+      }
+    }
   }
 }
 nodes {
@@ -244,6 +255,17 @@ nodes {
           }
           args {
             int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Delete Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "51fd3e0c3166377491004df6"
           }
         }
       }

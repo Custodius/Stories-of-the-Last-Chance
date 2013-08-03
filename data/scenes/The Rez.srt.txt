@@ -320,7 +320,7 @@ characters {
       archetypeName: "Non-Combatant"
     }
     team_id: "Civilians"
-    char_name: "Civy2"
+    char_name: "Barbara"
     pc_spawn_number: -1
     karma: 6
   }
@@ -366,7 +366,7 @@ characters {
       prefab_name: "Maintenance"
     }
     team_id: "Civilians"
-    char_name: "Civy1"
+    char_name: "John"
     pc_spawn_number: -1
     portrait_code_override: "s5h6b6"
     karma: 6

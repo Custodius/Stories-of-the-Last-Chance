@@ -1,0 +1,7 @@
+id: "C1-s2 34 Americar Computer Control Module"
+type: ItemType_QuestItem
+uirep {
+  description: "The computer core to a 2034 Ford Americar, one of the most common cars on the road. "
+}
+credentials: 0
+sorting_group: "Quest"
